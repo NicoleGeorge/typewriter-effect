@@ -12,7 +12,8 @@ const TypeWriter = function (txtElement, words, wait = 3000) {
 
 // Type Method
 TypeWriter.prototype.type = function() {
-    
+// console.log('Hello')
+    setTimeout(() => this.type(), 5000);
 }
 // init on DOM load - need event handler
 
