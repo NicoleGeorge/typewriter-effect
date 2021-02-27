@@ -29,6 +29,24 @@ TypeWriter.prototype.type = function () {
   //   output text into the header/span element
   this.txtElement.innerHTML = `<span class='txt'>${this.txt}</span>`;
 
+  // setting the type speed - dynamic depending on function
+  let typeSpeed = 300;
+
+  if (this.isDeleting) {
+    typeSpeed /= 2; //dividing typeSpeed by 2 in shorthand
+  }
+
+  //   once word has finished loading
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    // word will pause once loaded
+    typeSpeed = this.wait;
+    //set delete to true
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+      
+  }
+
   setTimeout(() => this.type(), 500);
 };
 // init on DOM load - need event handler
