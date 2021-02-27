@@ -11,10 +11,15 @@ const TypeWriter = function (txtElement, words, wait = 3000) {
 };
 
 // Type Method
-TypeWriter.prototype.type = function() {
-// console.log('Hello')
-    setTimeout(() => this.type(), 5000);
-}
+TypeWriter.prototype.type = function () {
+  // console.log('Hello')
+  const current = this.wordIndex % this.words.length;
+  // get full text of current word
+  const fullTxt = this.words[current];
+  console.log(fullTxt);
+
+  setTimeout(() => this.type(), 500);
+};
 // init on DOM load - need event handler
 
 document.addEventListener('DOMContentLoaded', init);
