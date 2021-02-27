@@ -11,7 +11,9 @@ const TypeWriter = function (txtElement, words, wait = 3000) {
 };
 
 // Type Method
-
+TypeWriter.prototype.type = function() {
+    
+}
 // init on DOM load - need event handler
 
 document.addEventListener('DOMContentLoaded', init);
