@@ -25,6 +25,10 @@ TypeWriter.prototype.type = function () {
     // add a character
     this.txt = fullTxt.substring(0, this.txt.length + 1);
   }
+
+  //   output text into the header/span element
+  this.txtElement.innerHTML = `<span class='txt'>${this.txt}</span>`;
+
   setTimeout(() => this.type(), 500);
 };
 // init on DOM load - need event handler
