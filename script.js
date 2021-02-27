@@ -16,8 +16,15 @@ TypeWriter.prototype.type = function () {
   const current = this.wordIndex % this.words.length;
   // get full text of current word
   const fullTxt = this.words[current];
-  console.log(fullTxt);
-
+  //   console.log(fullTxt);
+  // check if deleting the word
+  if (this.isDeleting) {
+    // remove a character
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    // add a character
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
   setTimeout(() => this.type(), 500);
 };
 // init on DOM load - need event handler
