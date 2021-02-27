@@ -44,10 +44,14 @@ TypeWriter.prototype.type = function () {
     //set delete to true
     this.isDeleting = true;
   } else if (this.isDeleting && this.txt === '') {
-      
+    this.isDeleting = false;
+    // run the next word
+    this.wordIndex++;
+    // pause loading before starting the next word
+    typeSpeed = 500;
   }
 
-  setTimeout(() => this.type(), 500);
+  setTimeout(() => this.type(), typeSpeed);
 };
 // init on DOM load - need event handler
 
